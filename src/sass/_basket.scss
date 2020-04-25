@@ -1,0 +1,122 @@
+.basket {
+  display: grid;
+  grid-template-columns: 1fr 60% 1fr;
+  padding: 3rem 0;
+  color: #333;
+  background-color: #d2e4f4;
+  grid-row-gap: 1.5rem;
+  min-height: 80vh;
+
+  @include respond(tab-land) {
+    grid-template-columns: 1fr 80% 1fr;
+  }
+
+  @include respond(tab-port) {
+    grid-template-columns: 1fr 95% 1fr;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 6rem 0 3rem 0;
+    font-size: 3rem;
+
+    @include respond(tab-port) {
+      margin: 4rem 0 -2rem 0;
+    }
+
+    @include respond(phone) {
+      margin: 2rem 0 2rem 0;
+    }
+  }
+
+  &__orders-container {
+    grid-column: 2 / 3;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 1.5rem;
+    font-size: 2rem;
+    justify-content: space-around;
+
+    @include respond(tab-port) {
+      padding: 0;
+    }
+
+    @include respond(phone) {
+      flex-direction: column;
+    }
+
+    h5 {
+      font-size: 2rem;
+      margin: 0;
+
+      @include respond(phone) {
+        margin: 1rem;
+        line-height: 1.6;
+      }
+    }
+
+    button {
+      font-size: inherit;
+      display: inline-block;
+      padding: 1rem;
+      border-radius: 3px;
+      border: none;
+      color: #fff;
+      background-color: #e02648;
+
+      @include respond(phone) {
+        margin-bottom: 1rem;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+    }
+  }
+
+  &__price-container {
+    grid-column: 2 / 3;
+    margin-top: 1.5rem;
+
+    h5 {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__submit-btn {
+    grid-column: 2 / 3;
+    justify-self: center;
+    background-color: #218838;
+    color: #fff;
+    display: block;
+    border: none;
+    font-size: 2.8rem;
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    align-self: center;
+  }
+
+  &__empty {
+    grid-column: 2 / 3;
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond(tab-port) {
+      font-size: 3rem;
+    }
+
+    @include respond(phone) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__bottom-height {
+    grid-column: 1 / -1;
+  }
+}

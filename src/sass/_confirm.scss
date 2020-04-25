@@ -1,0 +1,30 @@
+.confirm {
+  background-color: #E9ECEF;
+  color: #0c631f;
+  height: 100vh;
+  text-align: center;
+  padding-top: 3rem;
+
+  &__thank {
+    width: 50%;
+    margin: 2rem auto;
+    font-family: italic;
+    font-size: 3.5rem;
+    color: transparent;
+    background-image: linear-gradient(to right, #0000ff, #ea2532);
+    background-clip: text;
+
+    @include respond(phone) {
+      width: 90%;
+    }
+  }
+
+  &__submit {
+    font-size: 2.5rem;
+    margin: 3rem auto;
+
+    @include respond(phone) {
+      width: 95%;
+    }
+  }
+}

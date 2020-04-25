@@ -1,0 +1,107 @@
+.header {
+  background-image: linear-gradient(to right, greenyellow, #1574F5, greenyellow);
+  display: flex;
+  align-items: center;
+  padding: 1rem 5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  @include respond(tab-port) {
+    padding: 1rem 2rem;
+  }
+
+  &__title {
+    color: transparent;
+    margin-right: auto;
+    margin-left: 3rem;
+    font-family: 'Tangerine', cursive;
+    font-weight: 700;
+    font-size: 5rem;
+    background-image: linear-gradient(to right, green, red);
+    background-clip: text;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+
+    @include respond(tab-port) {
+      margin-left: -1rem;
+    }
+
+    @include respond(phone) {
+      margin: 0;
+      margin-right: auto;
+    }
+  }
+
+  &__navlink {
+    margin: 0 2rem;
+
+    @include respond(tab-port) {
+      margin: 0 1.5rem;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__navlink-basket {
+    position: relative;
+
+    @include respond(tab-port) {
+      margin-right: -1rem;
+    }
+
+    @include respond(phone) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__icons {
+    width: 5rem;
+    height: 5rem;
+    fill: lighten(#333, 10%);
+  }
+
+  &__home {
+    // background-color: lime;
+  }
+
+  &__basket--animation {
+
+  }
+
+  &__basket {
+    // animation: basketColor 1s infinite;
+  }
+
+  &__basketNumber {
+    font-size: 2rem;
+    display: inline-block;
+    position: absolute;
+    color: #fff;
+    background-color: #ba1a2f;
+    top: 4rem;
+    left: 2.5rem;
+    border-radius: 50%;
+    transform: translate(-10%, -50%);
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    transition: all .2s;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  @keyframes basketColor {
+    0% {fill: darken($color-primary, 5%);}
+    30% {fill: darken($color-primary, 5%);}
+    100% {fill: $color-primary; transform: scale(1.2);}
+  }
+}

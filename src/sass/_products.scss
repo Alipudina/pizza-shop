@@ -1,0 +1,43 @@
+.productsNavbar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #000;
+
+  &__item {
+    background-color: $color-primary;
+    color: #fff;
+    margin: 7rem 2rem;
+    margin-bottom: .5rem;
+  }
+
+  &__link {
+    color: inherit;
+    padding: 1.2rem 1.5rem;
+    font-size: 2rem;
+    display: inline-block;
+    padding-bottom: calc(1.2rem - 5px);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__link:focus + * {
+    background-color: #218838;
+    width: 100%;
+  }
+
+  &__border-bottom {
+    display: block;
+    height: 5px;
+    background-color: transparent;
+    width: 2%;
+    transition: all .25s;
+  }
+
+  &__link:hover + * {
+    background-color: #218838;
+    width: 100%;
+  }
+}

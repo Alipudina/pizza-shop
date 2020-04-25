@@ -1,0 +1,132 @@
+.singleProduct {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem 4rem;
+  grid-gap: 2rem;
+  width: 75%;
+  margin: auto;
+
+  @include respond(tab-land) {
+    padding: 2rem 0;
+    width: 90%;
+  }
+
+  @include respond(tab-port) {
+    padding: 2rem 0;
+    width: 97%;
+    grid-gap: 1.5rem;
+  }
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    width: 100% !important;
+    text-align: center;
+  }
+
+  &__card {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    @include respond(phone) {
+      margin: 0 3rem;
+    }
+  }
+
+  &__img-container {
+    height: 25rem;
+    grid-column: 1 / -1;
+    grid-row: 1 / 3;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__name,
+  &__price {
+    background-color: #fff;
+    color: #4D4D4D;
+    padding: .6rem;
+    font-size: 1.6rem;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+  }
+
+  &__name {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    justify-self: start;
+
+  }
+
+  &__price {
+    grid-column: 4 / 6;
+    grid-row: 1 / 2;
+    justify-self: end;
+  }
+
+  &__btns-container {
+    grid-column: 1 / -1;
+    display: flex;
+    height: 5rem;
+    padding: 0 1rem;
+
+    & > * {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      background-color: #4D4D4D;
+      display: block;
+      border: none;
+      color: #fff;
+    }
+  }
+
+  &__btn {
+    font-size: 3rem;
+    flex: 0 0 15%;
+    display: inline-block;
+    display: flex;
+
+    &:first-of-type {
+      padding-bottom: .5rem;
+      transform: translateX(2px);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__input {
+    text-align: center;
+    width: 20%;
+    font-weight: 700;
+    display: inline-block;
+    transform: translateX(1px);
+  }
+
+  &__addToOrder {
+    flex-grow: 1;
+    background-color: #218838;
+    margin-left: 1rem;
+    transition: all .2s;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: #1bd343;
+    }
+  }
+}
